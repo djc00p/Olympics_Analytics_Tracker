@@ -17,17 +17,17 @@ user story goes here
 ```
 
 ##### Successful Response
-- [] HTTP Status `204`
+- [ ] HTTP Status `204`
 
 ##### Failed Response
-- [] Has format:
+- [ ] Has format:
   ```js
   { "error": "<Descriptive Message>" }
   ```
 
 - No food matches provided ID
-  - [] HTTP Status `404`
-  - [] Descriptive message: "message"
+  - [ ] HTTP Status `404`
+  - [ ] Descriptive message: "message"
 - Catch internal server errors with
-  - [] HTTP Status `500`
-  - [] Descriptive message: "message"
+  - [ ] HTTP Status `500`
+  - [ ] Descriptive message: "message"
