@@ -1,24 +1,72 @@
-# README
+# Olympics Analytics Tracker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Authored by: [Deonte Cooper](https://github.com/djc00p)
 
-Things you may want to cover:
+This is a solo project Take Home Challenge to build a live Olympic Analytics tracker for the 2020
+Summer Games. I used [Olympian CSV Data](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module4/projects/take_home_challenge/prompts/olympic_data_2016.csv) to populate my database using a Rake Task.
 
-* Ruby version
+## Setup
 
-* System dependencies
+The program can run in development from the Rails server after following these steps in your console:
 
-* Configuration
+Clone down the repo
+```
+$ git clone git@github.com:djc00p/Olympics_Analytics_Tracker.git
+```
 
-* Database creation
+Change to the app directory
+```
+cd Olympics_Analytics_Tracker
+```
 
-* Database initialization
+Install the gem packages
+```
+$ bundle install
+```
 
-* How to run the test suite
+Setup Database
+```
+$ rails db:{create,migrate}
+$ rake import:olympians
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Run the server
+```
+$ rails s
+```
 
-* Deployment instructions
+## Testing
+The project uses [SimpleCov](https://github.com/colszowka/simplecov) and [RSpec](https://github.com/rspec/rspec) to test.
 
-* ...
+Run the test suite:
+```
+$ bundle exec rspec
+```
+
+## Endpoints
+
+|                Endpoints                |
+|-----------------------------------------|
+|[Olympians](#olympians)                  |
+|[Youngest Olympians](#youngest-olympians)|
+|[Oldest Olympians](#oldest-olympians)    |
+|[Olympian Stats](#olympian-stats)        |
+|[Events](#events)                        |
+|[Event Medalists](#event-medalists)      |
+
+### Olympians
+### Youngest Olympians
+### Oldest Olympians
+### Olympian Stats
+### Events
+### Event Medalists
+
+## System Requirements
+
+Language: [Ruby 2.4.1](https://www.ruby-lang.org/en/)
+
+Framework: [Rails 5.2.3](https://rubyonrails.org/)
+
+Database: [PostgreSQL 11.2](https://www.postgresql.org/)
+
+ORM: [Active Record](https://guides.rubyonrails.org/active_record_querying.html)
