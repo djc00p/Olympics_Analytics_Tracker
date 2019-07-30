@@ -2,7 +2,6 @@ require "rails_helper"
 
 describe 'Olympians API Request', type: :request  do
   before :each do
-
     @oly1 = create(:olympian, name: "joe", team: "the best", age: 21, sport: "Swimming", event: "swimming 100",  medal: "NA")
     oly2 = create(:olympian)
     oly3 = create(:olympian)
