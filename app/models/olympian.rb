@@ -6,4 +6,8 @@ class Olympian < ApplicationRecord
     end
     return list
   end
+
+  def self.youngest
+   [ Olympians.new(self.order(:age).limit(5).first) ] 
+  end
 end
