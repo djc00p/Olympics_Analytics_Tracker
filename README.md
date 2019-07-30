@@ -75,25 +75,24 @@ HTTP/1.1 200 OK
 
 ###### Body
 
-```js
+```json
 {
   "olympians":
     [
-      {
-        "name": "Maha Abdalsalam",
-        "team": "Egypt",
-        "age": 18,
-        "sport": "Diving"
-        "total_medals_won": 0
-      },
-      {
-        "name": "Ahmad Abughaush",
-        "team": "Jordan",
-        "age": 20,
-        "sport": "Taekwondo"
-        "total_medals_won": 1
-      },
-      {...}
+        {
+          "name": "Maha Abdalsalam",
+          "team": "Egypt",
+          "age": 18,
+          "sport": "Diving",
+          "total_medals_won": 0
+        },
+        {
+          "name": "Ahmad Abughaush",
+          "team": "Jordan",
+          "age": 20,
+          "sport": "Taekwondo",
+          "total_medals_won": 1
+        },
     ]
 }
 ```
@@ -117,10 +116,167 @@ HTTP/1.1 500 Internal Server Error
 ---
 
 ### Youngest Olympians
+
+#### Sort
+
+Returns youngest olympian
+
+##### Request
+
+```http
+GET /api/v1/olympians?age=youngest
+```
+
+##### Successful Response
+
+```http
+HTTP/1.1 200 OK
+```
+
+###### Body
+
+```json
+{
+    "youngest": [
+        {
+            "name": "Ana Iulia Dascl",
+            "team": "Romania",
+            "age": 13,
+            "sport": "Swimming",
+            "total_medals_won": 0
+        }
+    ]
+}
+```
+
+<details><summary>Failed Responses</summary>
+
+##### Other
+
+```http
+HTTP/1.1 500 Internal Server Error
+```
+
+###### Body
+
+```js
+{"error": "Internal Server Error"}
+```
+
+</details>
+
+---
+
 ### Oldest Olympians
+
+#### Sort
+
+Returns oldest olympian
+
+##### Request
+
+```http
+GET /api/v1/olympians?age=oldest
+```
+
+##### Successful Response
+
+```http
+HTTP/1.1 200 OK
+```
+
+###### Body
+
+```json
+{
+    "oldest": [
+        {
+           "name": "Julie Brougham",
+           "team": "New Zealand",
+           "age": 62,
+           "sport": "Equestrianism",
+           "total_medals_won": 0
+        }
+    ]
+}
+```
+
+<details><summary>Failed Responses</summary>
+
+##### Other
+
+```http
+HTTP/1.1 500 Internal Server Error
+```
+
+###### Body
+
+```js
+{"error": "Internal Server Error"}
+```
+
+</details>
+
+---
 ### Olympian Stats
+
+#### Index
+
+Returns all olympian stats
+
+##### Request
+
+```http
+GET /api/v1/olympian_stats
+```
+
+##### Successful Response
+
+```http
+HTTP/1.1 200 OK
+```
+
+###### Body
+
+```json
+{
+    "olympian_stats": {
+        "total_competing_olympians": 3120,
+        "average_weight": {
+            "unit": "kg",
+            "male_olympians": 75.4,
+            "female_olympians": 70.2
+        },
+        "average_age": 26.2
+    }
+}
+```
+
+<details><summary>Failed Responses</summary>
+
+##### Other
+
+```http
+HTTP/1.1 500 Internal Server Error
+```
+
+###### Body
+
+```js
+{"error": "Internal Server Error"}
+```
+
+</details>
+
+---
+
 ### Events
+
+---
+
 ### Event Medalists
+
+---
 
 ## System Requirements
 
