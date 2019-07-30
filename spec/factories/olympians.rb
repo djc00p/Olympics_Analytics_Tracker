@@ -9,6 +9,6 @@ FactoryBot.define do
     sequence(:games) { "2020 Games" }
     sequence(:sport) { |n| "Sport #{n}" }
     sequence(:event) { |n| "Event #{n}" }
-    sequence(:medal) { |n| "Medal #{n}" }
+    sequence(:medal) { ['Gold','Silver','Bronze','NA'].sample }
   end
 end

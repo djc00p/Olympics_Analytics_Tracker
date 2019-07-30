@@ -2,8 +2,7 @@
 
 Authored by: [Deonte Cooper](https://github.com/djc00p)
 
-This is a solo project Take Home Challenge to build a live Olympic Analytics tracker for the 2020
-Summer Games. I used [Olympian CSV Data](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module4/projects/take_home_challenge/prompts/olympic_data_2016.csv) to populate my database using a Rake Task.
+This is a solo project Take Home Challenge to build a live Olympic Analytics tracker for the 2020 Summer Games. I used [Olympian CSV Data](https://github.com/turingschool/backend-curriculum-site/blob/gh-pages/module4/projects/take_home_challenge/prompts/olympic_data_2016.csv) to populate my database using a Rake Task.
 
 ## Setup
 
@@ -16,7 +15,7 @@ $ git clone git@github.com:djc00p/Olympics_Analytics_Tracker.git
 
 Change to the app directory
 ```
-cd Olympics_Analytics_Tracker
+$ cd Olympics_Analytics_Tracker
 ```
 
 Install the gem packages
@@ -54,7 +53,69 @@ $ bundle exec rspec
 |[Events](#events)                        |
 |[Event Medalists](#event-medalists)      |
 
+
+
 ### Olympians
+
+#### Index
+
+Returns all olympians currently in the database
+
+##### Request
+
+```http
+GET /api/v1/olympians
+```
+
+##### Successful Response
+
+```http
+HTTP/1.1 200 OK
+```
+
+###### Body
+
+```js
+{
+  "olympians":
+    [
+      {
+        "name": "Maha Abdalsalam",
+        "team": "Egypt",
+        "age": 18,
+        "sport": "Diving"
+        "total_medals_won": 0
+      },
+      {
+        "name": "Ahmad Abughaush",
+        "team": "Jordan",
+        "age": 20,
+        "sport": "Taekwondo"
+        "total_medals_won": 1
+      },
+      {...}
+    ]
+}
+```
+
+<details><summary>Failed Responses</summary>
+
+##### Other
+
+```http
+HTTP/1.1 500 Internal Server Error
+```
+
+###### Body
+
+```js
+{"error": "Internal Server Error"}
+```
+
+</details>
+
+---
+
 ### Youngest Olympians
 ### Oldest Olympians
 ### Olympian Stats
