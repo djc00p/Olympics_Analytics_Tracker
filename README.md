@@ -241,11 +241,11 @@ HTTP/1.1 200 OK
 ```json
 {
     "olympian_stats": {
-        "total_competing_olympians": 3120,
+        "total_competing_olympians": 2850,
         "average_weight": {
             "unit": "kg",
-            "male_olympians": 75.4,
-            "female_olympians": 70.2
+            "male_olympians": 77,
+            "female_olympians": 60.7
         },
         "average_age": 26.2
     }
