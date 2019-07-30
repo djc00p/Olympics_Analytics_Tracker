@@ -1,10 +1,10 @@
 FactoryBot.define do
   factory :olympian do
     sequence(:name) { |n| "Name #{n}" }
-    sequence(:sex) { "M" || "W" }
-    sequence(:age) { |n| n }
+    sequence(:sex) { ["M", "F"].sample }
+    sequence(:age) { rand(13..62) }
     sequence(:height) { |n| n }
-    sequence(:weight) { |n| n }
+    sequence(:weight) { rand(55..200) }
     sequence(:team) { |n| "Team #{n}" }
     sequence(:games) { "2020 Games" }
     sequence(:sport) { |n| "Sport #{n}" }
