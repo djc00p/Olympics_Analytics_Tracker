@@ -9,11 +9,4 @@ class  Api::V1::OlympiansController < ApplicationController
       render json: { olympians: Olympian.olympians }
     end
   end
-
-  private
-
-  def olympian_params
-
-    params.require(:olympians).permit(:age)
-  end
 end
