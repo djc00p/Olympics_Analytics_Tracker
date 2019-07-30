@@ -8,6 +8,10 @@ class Olympian < ApplicationRecord
   end
 
   def self.youngest
-   [ Olympians.new(self.order(:age).limit(5).first) ] 
+   [ Olympians.new(self.order(:age).limit(5).first) ]
+  end
+  
+  def self.oldest
+   [ Olympians.new(self.order('age DESC').limit(5).first) ]
   end
 end
