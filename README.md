@@ -26,7 +26,7 @@ $ bundle install
 Setup Database
 ```
 $ rails db:{create,migrate}
-$ rake import:olympians
+$ rake import:all
 ```
 
 Run the server
@@ -271,6 +271,74 @@ HTTP/1.1 500 Internal Server Error
 ---
 
 ### Events
+
+#### Index
+
+Returns all event stats
+
+##### Request
+
+```http
+GET /api/v1/events
+```
+
+##### Successful Response
+
+```http
+HTTP/1.1 200 OK
+```
+
+###### Body
+
+```json
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "sports",
+            "attributes": {
+                "sport": "Archery",
+                "events": [
+                    "Archery Men's Individual",
+                    "Archery Men's Team",
+                    "Archery Women's Individual",
+                    "Archery Women's Team"
+                ]
+            }
+        },
+        {
+            "id": "3",
+            "type": "sports",
+            "attributes": {
+                "sport": "Badminton",
+                "events": [
+                    "Badminton Men's Doubles",
+                    "Badminton Men's Singles",
+                    "Badminton Mixed Doubles",
+                    "Badminton Women's Doubles",
+                    "Badminton Women's Singles"
+                ]
+            }
+        }
+    ]
+}
+```
+
+<details><summary>Failed Responses</summary>
+
+##### Other
+
+```http
+HTTP/1.1 500 Internal Server Error
+```
+
+###### Body
+
+```js
+{"error": "Internal Server Error"}
+```
+
+</details>
 
 ---
 
