@@ -3,6 +3,7 @@ class OlympianStats
   def initialize
     @id = 1
   end
+  
   def total_competing_olympians
     Olympian.select(:name).distinct.count
   end
